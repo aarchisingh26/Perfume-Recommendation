@@ -1,3 +1,4 @@
+from flask import app
 import pandas as pd
 import numpy as np
 import re
@@ -218,3 +219,6 @@ def handler(request):
             'headers': headers,
             'body': json.dumps({'error': f'Server error: {str(e)}'})
         }
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5001)
