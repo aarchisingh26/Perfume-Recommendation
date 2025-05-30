@@ -220,7 +220,7 @@
 
         async function checkStatus() {
             try {
-                const response = await fetch('/api/health');
+                const response = await fetch('/health');
                 const data = await response.json();
                 
                 if (data.recommender_ready) {
@@ -241,7 +241,7 @@
             resultsDiv.innerHTML = '';
             
             try {
-                const response = await fetch('/api/recommend', {
+                const response = await fetch('/recommend', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
